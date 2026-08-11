@@ -138,6 +138,7 @@ public class Utils {
                     return R.style.AppTheme;
             }
         }
+
         return R.style.AppTheme;
     }
 
@@ -150,6 +151,14 @@ public class Utils {
             return R.style.AppTheme_Translucent_Dark;
         else if (theme == Integer.parseInt(appContext.getString(R.string.pref_theme_black_value)))
             return R.style.AppTheme_Translucent_Black;
+        else if (theme == Integer.parseInt(appContext.getString(R.string.pref_theme_follow_os))) {
+            switch (appContext.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) {
+                case Configuration.UI_MODE_NIGHT_YES:
+                    return R.style.AppTheme_Translucent_Dark;
+                case Configuration.UI_MODE_NIGHT_NO:
+                    return R.style.AppTheme_Translucent;
+            }
+        }
 
         return R.style.AppTheme_Translucent;
     }
@@ -163,7 +172,15 @@ public class Utils {
             return R.style.AppTheme_Settings_Dark;
         else if (theme == Integer.parseInt(appContext.getString(R.string.pref_theme_black_value)))
             return R.style.AppTheme_Settings_Black;
-
+        else if (theme == Integer.parseInt(appContext.getString(R.string.pref_theme_follow_os))) {
+            switch (appContext.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) {
+                case Configuration.UI_MODE_NIGHT_YES:
+                    return R.style.AppTheme_Settings_Dark;
+                case Configuration.UI_MODE_NIGHT_NO:
+                    return R.style.AppTheme_Settings;
+            }
+        }
+        
         return R.style.AppTheme_Settings;
     }
 

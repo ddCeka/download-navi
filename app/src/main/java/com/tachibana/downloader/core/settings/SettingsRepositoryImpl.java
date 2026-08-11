@@ -48,7 +48,7 @@ public class SettingsRepositoryImpl implements SettingsRepository
         /* Appearance settings */
         static int theme(@NonNull Context context)
         {
-            return Integer.parseInt(context.getString(R.string.pref_theme_light_value));
+            return Integer.parseInt(context.getString(R.string.pref_theme_follow_os));
         }
         static final boolean progressNotify = true;
         static final boolean finishNotify = true;
