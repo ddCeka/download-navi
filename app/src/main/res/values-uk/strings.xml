@@ -316,10 +316,10 @@
     <string name="pref_browser_hide_menu_icon_summary">Приховати іконку браузера з меню на головному екрані</string>
     <!-- About dialog -->
     <string name="about_title">Про Download Navi</string>
-    <string name="about_description"><![CDATA[    Більше інформації, а також допомогти проєкту: <a href="https://github.com/TachibanaGeneralLaboratories/download-navi">https://github.com/TachibanaGeneralLaboratories/download-navi</a><br><br>
+    <string name="about_description"><![CDATA[    Більше інформації, а також допомогти проєкту: <a href="https://github.com/ddCeka/download-navi">https://github.com/ddCeka/download-navi</a><br><br>
     Download Navi - це безкоштовний менеджер завантажень з відкритим кодом для Android 4.4+<br><br>
     Download Navi це вільне програмне забезпечення випущене на умовах ліцензії <a href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License v3 (GPLv3)</a><br><br>
-    <a href="https://github.com/TachibanaGeneralLaboratories/download-navi/blob/HEAD/PRIVACY.md">Політика конфіденційності</a>]]></string>
+    <a href="https://github.com/ddCeka/download-navi/blob/HEAD/PRIVACY.md">Політика конфіденційності</a>]]></string>
     <string name="about_changelog">Журнал змін</string>
     <string name="move_file_error_already_exists">Не вдалося перемістити файл: він уже існує</string>
     <string name="uncompress_archive_error">Не вдалося розпакувати архів</string>

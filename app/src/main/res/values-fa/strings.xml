@@ -299,7 +299,7 @@
     <string name="pref_browser_search_engine_title">موتور جست‌وجو</string>
     <!-- About dialog -->
     <string name="about_title">دربارهٔ Download Navi</string>
-    <string name="about_description">برای اطّلاعات بیشتر و کمک به پروژه: &lt;a href=\"https://github.com/TachibanaGeneralLaboratories/download-navi\"&gt;https://github.com/TachibanaGeneralLaboratories/download-navi&lt;/a&gt;&lt;br&gt;&lt;br&gt; Download Navi یک مدیر بارگیری آزاد و متن‌باز برای اندروید بالای 4.4 است&lt;br&gt;&lt;br&gt; Download Navi یک نرم‌افزار آزاد تحت مجوز &lt;a href=\"http://www.gnu.org/copyleft/gpl.html\"&gt;نگارش ۳ پروانهٔ جامع همگانی گنو (GPLv3)&lt;/a&gt; می‌باشد&lt;br&gt;&lt;br&gt;&lt;a href=\"https://github.com/TachibanaGeneralLaboratories/download-navi/blob/HEAD/PRIVACY.md\"&gt;خط مشی حریم خصوصی&lt;/a&gt;</string>
+    <string name="about_description">برای اطّلاعات بیشتر و کمک به پروژه: &lt;a href=\"https://github.com/ddCeka/download-navi\"&gt;https://github.com/ddCeka/download-navi&lt;/a&gt;&lt;br&gt;&lt;br&gt; Download Navi یک مدیر بارگیری آزاد و متن‌باز برای اندروید بالای 4.4 است&lt;br&gt;&lt;br&gt; Download Navi یک نرم‌افزار آزاد تحت مجوز &lt;a href=\"http://www.gnu.org/copyleft/gpl.html\"&gt;نگارش ۳ پروانهٔ جامع همگانی گنو (GPLv3)&lt;/a&gt; می‌باشد&lt;br&gt;&lt;br&gt;&lt;a href=\"https://github.com/ddCeka/download-navi/blob/HEAD/PRIVACY.md\"&gt;خط مشی حریم خصوصی&lt;/a&gt;</string>
     <string name="about_changelog">گزارش تغییرات</string>
     <string name="file_not_available">پرونده در دسترس نیست!</string>
     <plurals name="unable_sharing">

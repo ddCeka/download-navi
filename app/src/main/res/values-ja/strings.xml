@@ -307,10 +307,10 @@
     <string name="pref_browser_hide_menu_icon_summary">メイン画面のメニューからブラウザアイコンを隠す</string>
     <!-- About dialog -->
     <string name="about_title">Download Navi について</string>
-    <string name="about_description"><![CDATA[    詳細情報とプロジェクトの支援: <a href="https://github.com/TachibanaGeneralLaboratories/download-navi">https://github.com/TachibanaGeneralLaboratories/download-navi</a><br><br>
+    <string name="about_description"><![CDATA[    詳細情報とプロジェクトの支援: <a href="https://github.com/ddCeka/download-navi">https://github.com/ddCeka/download-navi</a><br><br>
     Download Navi は Android 4.4 以上向けの無料のオープンソースダウンロードマネージャです<br><br>
     Download Navi は <a href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License v3 (GPLv3)</a> の条件の下でリリースされたフリーソフトウェアです<br><br>
-    <a href="https://github.com/TachibanaGeneralLaboratories/download-navi/blob/HEAD/PRIVACY.md">個人情報保護方針</a>]]></string>
+    <a href="https://github.com/ddCeka/download-navi/blob/HEAD/PRIVACY.md">個人情報保護方針</a>]]></string>
     <string name="about_changelog">更新履歴</string>
     <string name="move_file_error">ファイルを移動できません</string>
     <string name="move_file_error_already_exists">ファイルを移動できません: すでに存在します</string>

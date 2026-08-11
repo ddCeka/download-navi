@@ -310,10 +310,10 @@
     <string name="pref_browser_hide_menu_icon_summary">Ocultar ícone do navegador do menu da tela principal</string>
     <!-- About dialog -->
     <string name="about_title">Sobre Download Navi</string>
-    <string name="about_description"><![CDATA[    Mais informações e também para ajudar o projeto: <a href="https://github.com/TachibanaGeneralLaboratories/download-navi">https://github.com/TachibanaGeneralLaboratories/download-navi</a><br><br>
+    <string name="about_description"><![CDATA[    Mais informações e também para ajudar o projeto: <a href="https://github.com/ddCeka/download-navi">https://github.com/ddCeka/download-navi</a><br><br>
     Download Navi é um gerenciador de downloads gratuito e de código aberto para Android 4.4+<br><br>
     Download Navi é um software livre, lançado sob os termos da licença <a href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License v3 (GPLv3)</a><br><br>
-    <a href="https://github.com/TachibanaGeneralLaboratories/download-navi/blob/HEAD/PRIVACY.md">Política de Privacidade</a>]]></string>
+    <a href="https://github.com/ddCeka/download-navi/blob/HEAD/PRIVACY.md">Política de Privacidade</a>]]></string>
     <string name="about_changelog">Alterações</string>
     <string name="uncompress_archive">Descompactar arquivo</string>
     <string name="move_file_error_already_exists">Não foi possível mover o arquivo: já existe</string>

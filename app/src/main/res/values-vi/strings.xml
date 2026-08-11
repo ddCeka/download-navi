@@ -307,10 +307,10 @@
     <string name="pref_browser_hide_menu_icon_summary">Ẩn biểu tượng trình duyệt khỏi menu màn hình chính</string>
     <!-- About dialog -->
     <string name="about_title">Giới thiệu về Download Navi</string>
-    <string name="about_description"><![CDATA[    Thông tin thêm về dự án và cách đóng góp cho dự án: <a href="https://github.com/TachibanaGeneralLaboratories/download-navi">https://github.com/TachibanaGeneralLaboratories/download-navi</a><br><br>
+    <string name="about_description"><![CDATA[    Thông tin thêm về dự án và cách đóng góp cho dự án: <a href="https://github.com/ddCeka/download-navi">https://github.com/ddCeka/download-navi</a><br><br>
     Download Navi là trình quản lí tải xuống miễn phí, mã nguồn mở, dành cho Android 4.4+<br><br>
     Download Navi là phần mềm tự do, được phân phối theo <a href="http://www.gnu.org/copyleft/gpl.html">Giấy phép công cộng GNU phiên bản 3 (GPLv3)</a><br><br>
-    <a href="https://github.com/TachibanaGeneralLaboratories/download-navi/blob/HEAD/PRIVACY.md">Chính sách quyền riêng tư</a>]]></string>
+    <a href="https://github.com/ddCeka/download-navi/blob/HEAD/PRIVACY.md">Chính sách quyền riêng tư</a>]]></string>
     <string name="about_changelog">Nhật kí thay đổi</string>
     <string name="move_file_error_already_exists">Không thể di chuyển tệp: đã tồn tại</string>
     <string name="uncompress_archive_error_unknown_type">Không thể giải nén kho lưu trữ: loại không xác định hoặc tệp bị hỏng</string>

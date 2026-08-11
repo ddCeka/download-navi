@@ -322,12 +322,12 @@
     <string name="pref_browser_hide_menu_icon_summary">إخفاء أيقونة المتصفح من قائمة الشاشة الرئيسية</string>
     <!-- About dialog -->
     <string name="about_title">حول Download Navi</string>
-    <string name="about_description"><![CDATA[    <br><br>لمزيد من المعلومات و للمساعدة في المشروع: <a href="https://github.com/TachibanaGeneralLaboratories/download-navi">https://github.com/TachibanaGeneralLaboratories/download-navi</a>
+    <string name="about_description"><![CDATA[    <br><br>لمزيد من المعلومات و للمساعدة في المشروع: <a href="https://github.com/ddCeka/download-navi">https://github.com/ddCeka/download-navi</a>
     مدير التحميلات Download Navi حر ومفتوح المصدر للأندرويد 4.4 +<br><br>
     تطبيق Download Navi هو برمجية حرة ، تم أطلاقها بموجب شروط رخصة <a
 href="http://www.gnu.org/copyleft/gpl.html">
 جنو العمومية الإصدارv3 (GPLv3)</a><br><br>
-   <a href="https://github.com/TachibanaGeneralLaboratories/download-navi/blob/HEAD/PRIVACY.md">سياسة الخصوصية</a>]]></string>
+   <a href="https://github.com/ddCeka/download-navi/blob/HEAD/PRIVACY.md">سياسة الخصوصية</a>]]></string>
     <string name="about_changelog">سِجل التغييرات</string>
     <string name="move_file_error">لا يمكن نقل الملف</string>
     <string name="uncompress_archive_error_unknown_type">غير قادر على إلغاء ضغط الأرشيف: نوع غير معروف أو ملف تالف</string>
