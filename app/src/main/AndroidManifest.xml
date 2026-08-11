@@ -14,6 +14,7 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" tools:node="replace" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" tools:ignore="ScopedStorage" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <uses-feature
@@ -24,6 +25,8 @@
         android:required="false" />
     <uses-feature android:name="android.software.leanback"
         android:required="false" />
+    <uses-feature android:name="android.hardware.type.automotive"
+        android:required="true" />
 
     <application
         android:name="MainApplication"
@@ -1107,13 +1110,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".ui.errorreport.ErrorReportActivity"
-            android:theme="@style/AppTheme.Translucent"
-            android:process=":acra"
-            android:excludeFromRecents="true"
-            android:finishOnTaskLaunch="true"
-            android:launchMode="singleInstance" />
 
         <activity android:name=".ui.SendTextToClipboard"
             android:label="@string/send_text_to_clipboard"

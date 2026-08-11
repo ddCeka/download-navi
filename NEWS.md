@@ -1,3 +1,13 @@
+Version 1.6.3 (2026-08-12)
+==========================
+
+ * RAR decompression support has been added back.
+ * Added follow device system theme.
+ * Added delete all downloads button.
+ * Bugfixing:
+     - NullPointerException crashes on Shutdown
+ * Updated current translations
+
 Version 1.6.2 (2022-03-15)
 ==========================
 

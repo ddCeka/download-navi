@@ -59,7 +59,6 @@ public class NotificationReceiver extends BroadcastReceiver
                 mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 mainIntent.setAction(NOTIFY_ACTION_SHUTDOWN_APP);
                 context.startActivity(mainIntent);
-
                 serviceIntent = new Intent(context.getApplicationContext(), DownloadService.class);
                 serviceIntent.setAction(NOTIFY_ACTION_SHUTDOWN_APP);
                 context.startService(serviceIntent);
@@ -88,8 +87,6 @@ public class NotificationReceiver extends BroadcastReceiver
                 break;
             case NOTIFY_ACTION_REPORT_APPLYING_PARAMS_ERROR:
                 Throwable e = (Throwable)intent.getSerializableExtra(TAG_ERR);
-                if (e != null)
-                    Utils.reportError(e, null);
                 break;
         }
     }

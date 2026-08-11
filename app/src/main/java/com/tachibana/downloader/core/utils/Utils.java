@@ -41,6 +41,7 @@ import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.net.NetworkCapabilities;
 import android.net.NetworkInfo;
@@ -80,9 +81,6 @@ import com.tachibana.downloader.receiver.BootReceiver;
 import com.tachibana.downloader.ui.main.DownloadItem;
 import com.tachibana.downloader.ui.main.drawer.DrawerGroup;
 import com.tachibana.downloader.ui.main.drawer.DrawerGroupItem;
-
-import org.acra.ACRA;
-import org.acra.ReportField;
 
 import java.io.File;
 import java.net.MalformedURLException;
@@ -132,6 +130,14 @@ public class Utils {
             return R.style.AppTheme_Dark;
         else if (theme == Integer.parseInt(appContext.getString(R.string.pref_theme_black_value)))
             return R.style.AppTheme_Black;
+        else if (theme == Integer.parseInt(appContext.getString(R.string.pref_theme_follow_os))) {
+            switch (appContext.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) {
+                case Configuration.UI_MODE_NIGHT_YES:
+                    return R.style.AppTheme_Dark;
+                case Configuration.UI_MODE_NIGHT_NO:
+                    return R.style.AppTheme;
+            }
+        }
 
         return R.style.AppTheme;
     }
@@ -145,6 +151,14 @@ public class Utils {
             return R.style.AppTheme_Translucent_Dark;
         else if (theme == Integer.parseInt(appContext.getString(R.string.pref_theme_black_value)))
             return R.style.AppTheme_Translucent_Black;
+        else if (theme == Integer.parseInt(appContext.getString(R.string.pref_theme_follow_os))) {
+            switch (appContext.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) {
+                case Configuration.UI_MODE_NIGHT_YES:
+                    return R.style.AppTheme_Translucent_Dark;
+                case Configuration.UI_MODE_NIGHT_NO:
+                    return R.style.AppTheme_Translucent;
+            }
+        }
 
         return R.style.AppTheme_Translucent;
     }
@@ -158,7 +172,15 @@ public class Utils {
             return R.style.AppTheme_Settings_Dark;
         else if (theme == Integer.parseInt(appContext.getString(R.string.pref_theme_black_value)))
             return R.style.AppTheme_Settings_Black;
-
+        else if (theme == Integer.parseInt(appContext.getString(R.string.pref_theme_follow_os))) {
+            switch (appContext.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) {
+                case Configuration.UI_MODE_NIGHT_YES:
+                    return R.style.AppTheme_Settings_Dark;
+                case Configuration.UI_MODE_NIGHT_NO:
+                    return R.style.AppTheme_Settings;
+            }
+        }
+        
         return R.style.AppTheme_Settings;
     }
 
@@ -545,14 +567,6 @@ public class Utils {
         ComponentName bootReceiver = new ComponentName(appContext, BootReceiver.class);
         appContext.getPackageManager()
                 .setComponentEnabledSetting(bootReceiver, flag, PackageManager.DONT_KILL_APP);
-    }
-
-    public static void reportError(@NonNull Throwable error,
-                                   String comment) {
-        if (comment != null)
-            ACRA.getErrorReporter().putCustomData(ReportField.USER_COMMENT.toString(), comment);
-
-        ACRA.getErrorReporter().handleSilentException(error);
     }
 
     public static String getAppVersionName(@NonNull Context context) {

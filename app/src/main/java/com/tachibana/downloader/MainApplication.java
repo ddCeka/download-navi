@@ -25,13 +25,6 @@ import android.util.Log;
 import androidx.multidex.MultiDexApplication;
 
 import com.tachibana.downloader.core.DownloadNotifier;
-import com.tachibana.downloader.ui.errorreport.ErrorReportActivity;
-
-import org.acra.ACRA;
-import org.acra.config.CoreConfigurationBuilder;
-import org.acra.config.DialogConfigurationBuilder;
-import org.acra.config.MailSenderConfigurationBuilder;
-import org.acra.data.StringFormat;
 
 public class MainApplication extends MultiDexApplication
 {
@@ -41,25 +34,6 @@ public class MainApplication extends MultiDexApplication
     public void onCreate()
     {
         super.onCreate();
-
-        CoreConfigurationBuilder builder = new CoreConfigurationBuilder();
-        builder
-                .withBuildConfigClass(BuildConfig.class)
-                .withReportFormat(StringFormat.JSON);
-        builder.withPluginConfigurations(new MailSenderConfigurationBuilder()
-                .withMailTo("proninyaroslav@mail.ru")
-                .build());
-        builder.withPluginConfigurations(new DialogConfigurationBuilder()
-                .withEnabled(true)
-                .withReportDialogClass(ErrorReportActivity.class)
-                .build());
-        // Set stub handler
-        if (Thread.getDefaultUncaughtExceptionHandler() == null) {
-            Thread.setDefaultUncaughtExceptionHandler((t, e) ->
-                    Log.e(TAG, "Uncaught exception in " + t + ": " + Log.getStackTraceString(e))
-            );
-        }
-        ACRA.init(this, builder);
 
         DownloadNotifier downloadNotifier = DownloadNotifier.getInstance(this);
         downloadNotifier.makeNotifyChans();

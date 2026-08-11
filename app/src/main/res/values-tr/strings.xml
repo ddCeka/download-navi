@@ -299,7 +299,7 @@
     <string name="pref_browser_search_engine_title">Arama motoru</string>
     <!-- About dialog -->
     <string name="about_title">Download Navi Hakkında</string>
-    <string name="about_description">Daha fazla bilgi ve projeye yardımcı olmak için: &lt;a href=https://github.com/TachibanaGeneralLaboratories/download-navi&gt;https://github.com/TachibanaGeneralLaboratories/download-navi&lt;/a&gt;&lt;br&gt;&lt;br&gt; Download Navi, Android 4.4+ için Özgür ve Açık Kaynaklı bir indirme yöneticisidir&lt;br&gt;&lt;br&gt; Download Navi, &lt;a href=http://www.gnu.org/copyleft/gpl.html&gt;GNU Genel Kamu Lisansının 3. sürümü (GPLv3)&lt;/a&gt; şartları altında yayınlanan özgür bir yazılımdır&lt;br&gt;&lt;br&gt; &lt;a href=https://github.com/TachibanaGeneralLaboratories/download-navi/blob/HEAD/PRIVACY.md&gt;Gizlilik Politikası&lt;/a&gt;</string>
+    <string name="about_description">Daha fazla bilgi ve projeye yardımcı olmak için: &lt;a href=https://github.com/ddCeka/download-navi&gt;https://github.com/ddCeka/download-navi&lt;/a&gt;&lt;br&gt;&lt;br&gt; Download Navi, Android 4.4+ için Özgür ve Açık Kaynaklı bir indirme yöneticisidir&lt;br&gt;&lt;br&gt; Download Navi, &lt;a href=http://www.gnu.org/copyleft/gpl.html&gt;GNU Genel Kamu Lisansının 3. sürümü (GPLv3)&lt;/a&gt; şartları altında yayınlanan özgür bir yazılımdır&lt;br&gt;&lt;br&gt; &lt;a href=https://github.com/ddCeka/download-navi/blob/HEAD/PRIVACY.md&gt;Gizlilik Politikası&lt;/a&gt;</string>
     <string name="about_changelog">Değişiklik günlüğü</string>
     <string name="pref_browser_hide_menu_icon_summary">Ana ekran menüsünden tarayıcı simgesini gizleyin</string>
     <string name="pref_browser_hide_menu_icon_title">Simgeyi menüden gizle</string>

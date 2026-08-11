@@ -4,7 +4,7 @@
     <string name="app_name">Download Navi</string>
     <string name="foreground_notification">Notifica in primo piano</string>
     <string name="download_running">In corso</string>
-    <string name="finished">Completato</string>
+    <string name="finished">Finito</string>
     <string name="shutdown">Esci</string>
     <!-- 1 d. 1 h. 1 m -->
     <string name="elapsed_time_format_d_h_mm">%1$d g. %2$d h %3$d min</string>
@@ -48,7 +48,7 @@
     <string name="redownload">Scarica di nuovo</string>
     <string name="Default">Default</string>
     <string name="warning">Attenzione</string>
-    <string name="apply">Applica</string>
+    <string name="apply">Applicare</string>
     <string name="report">Riporta</string>
     <string name="more_details">Mostra dettagli</string>
     <string name="clipboard">Appunti</string>
@@ -299,10 +299,10 @@
     <string name="pref_browser_search_engine_title">Motore di ricerca</string>
     <!-- About dialog -->
     <string name="about_title">Info su Download Navi</string>
-    <string name="about_description"><![CDATA[Maggiori informazioni ed anche per contribuire al progetto: <a href="https://github.com/TachibanaGeneralLaboratories/download-navi">https://github.com/TachibanaGeneralLaboratories/download-navi</a><br><br>
+    <string name="about_description"><![CDATA[Maggiori informazioni ed anche per contribuire al progetto: <a href="https://github.com/ddCeka/download-navi">https://github.com/ddCeka/download-navi</a><br><br>
     Download Navi is a free and Open Source download manager for Android 4.4+<br><br>
     Download Navi is free software, rilasciato sotto licenza <a href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License v3 (GPLv3)</a><br><br>
-    <a href="https://github.com/TachibanaGeneralLaboratories/download-navi/blob/HEAD/PRIVACY.md">Privacy Policy</a>]]></string>
+    <a href="https://github.com/ddCeka/download-navi/blob/HEAD/PRIVACY.md">Privacy Policy</a>]]></string>
     <string name="about_changelog">Registro delle modifiche</string>
     <string name="file_not_available">file non disponibile!</string>
     <string name="pref_header_limitations">Limitazioni</string>

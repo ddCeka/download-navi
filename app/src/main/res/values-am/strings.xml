@@ -299,9 +299,9 @@
     <string name="pref_browser_search_engine_title">የመፈለጊያ ማሸን</string>
     <!-- About dialog -->
     <string name="about_title">ስለ ዳዉንሎድ ናቪ</string>
-    <string name="about_description"><![CDATA[    ተጨማሪ መረጃ እና እንዲሁም ፕሮጀክቱን ለማገዝ: <a href="https://github.com/TachibanaGeneralLaboratories/download-navi">https://github.com/TachibanaGeneralLaboratories/download-navi</a><br><br>
+    <string name="about_description"><![CDATA[    ተጨማሪ መረጃ እና እንዲሁም ፕሮጀክቱን ለማገዝ: <a href="https://github.com/ddCeka/download-navi">https://github.com/ddCeka/download-navi</a><br><br>
   ዳዉንሎድ ናቪ ለ Android 4.4+ ነፃ እና ክፍት ምንጭ ማውረጃ አቀናባሪ ነው<br><br>
     ዳዉንሎድ ናቪ ነፃ ሶፍትዌር ነው ፣ በ ውሎቹ ስር ይወጣል<a href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License v3 (GPLv3)</a><br><br>
-    <a href="https://github.com/TachibanaGeneralLaboratories/download-navi/blob/HEAD/PRIVACY.md">የግላዊነት ፖሊሲ</a>]]></string>
+    <a href="https://github.com/ddCeka/download-navi/blob/HEAD/PRIVACY.md">የግላዊነት ፖሊሲ</a>]]></string>
     <string name="about_changelog">የለውጥ ምዝግብ</string>
 </resources>

@@ -313,10 +313,10 @@
     <!-- About dialog -->
     <string name="about_title">关于 Download Navi</string>
     <string name="about_description"><![CDATA[
-    访问此网站获取更多信息或者帮助项目: <a href="https://github.com/TachibanaGeneralLaboratories/download-navi">https://github.com/TachibanaGeneralLaboratories/download-navi</a><br><br>
+    访问此网站获取更多信息或者帮助项目: <a href="https://github.com/ddCeka/download-navi">https://github.com/ddCeka/download-navi</a><br><br>
     Download Navi 是适用于 Android 4.4 及以上版本的免费且开源的下载管理器<br><br>
     Download Navi 是一款自由软件，遵循 <a href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License v3 (GPLv3)</a> 许可证的条款发布<br><br>
-    <a href="https://github.com/TachibanaGeneralLaboratories/download-navi/blob/HEAD/PRIVACY.md">隐私政策</a>]]></string>
+    <a href="https://github.com/ddCeka/download-navi/blob/HEAD/PRIVACY.md">隐私政策</a>]]></string>
     <string name="about_changelog">更新日志</string>
     <string name="disable_battery_optimization_summary">为了在后台正常工作，需要在电池设置中禁用电池优化。</string>
     <string name="disable">禁用</string>

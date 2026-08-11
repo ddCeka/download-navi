@@ -236,7 +236,7 @@
     <string name="pref_browser_enable_cookies_title">Benarkan cookies</string>
     <string name="pref_browser_launcher_icon_title">Ikon pelayar dalam pelancar</string>
     <string name="pref_browser_hide_menu_icon_title">Sembunyi ikon dari menu</string>
-    <string name="about_description">Maklumat lebih lanjut dan juga untuk membantu projek ini: &lt;a href=https://github.com/TachibanaGeneralLaboratories/download-navi&gt;https://github.com/TachibanaGeneralLaboratories/download-navi&lt;/a&gt;&lt;br&gt;&lt;br&gt; Muat turun Navi adalah pengurus muat turun Sumber Terbuka percuma dan Terbuka untuk Android 4.4+&lt;br&gt;&lt;br&gt; Muat turun Navi adalah perisian percuma, dikeluarkan berdasarkan syarat &lt;a href = http: //www.gnu.org/copyleft/gpl. html&gt;Lesen Awam Umum GNU v3 (GPLv3) &lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;a href=https://github.com/TachibanaGeneralLaboratories/download-navi/blob/HEAD/PRIVACY.md&gt;Dasar Privasi&lt;/ a&gt;</string>
+    <string name="about_description">Maklumat lebih lanjut dan juga untuk membantu projek ini: &lt;a href=https://github.com/ddCeka/download-navi&gt;https://github.com/ddCeka/download-navi&lt;/a&gt;&lt;br&gt;&lt;br&gt; Muat turun Navi adalah pengurus muat turun Sumber Terbuka percuma dan Terbuka untuk Android 4.4+&lt;br&gt;&lt;br&gt; Muat turun Navi adalah perisian percuma, dikeluarkan berdasarkan syarat &lt;a href = http: //www.gnu.org/copyleft/gpl. html&gt;Lesen Awam Umum GNU v3 (GPLv3) &lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;a href=https://github.com/ddCeka/download-navi/blob/HEAD/PRIVACY.md&gt;Dasar Privasi&lt;/ a&gt;</string>
     <string name="drawer_status">Status</string>
     <string name="download_details">Butiran</string>
     <string name="download_queued_template">%1$s/%2$s • %3$s</string>

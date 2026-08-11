@@ -392,32 +392,7 @@ public class DownloadService extends Service
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
             builder.setCategory(Notification.CATEGORY_ERROR);
 
-        builder.addAction(makeReportAction(e));
-
         notifyManager.notify(id.hashCode(), builder.build());
-    }
-
-    private NotificationCompat.Action makeReportAction(Throwable e)
-    {
-        Intent reportIntent = new Intent(getApplicationContext(), NotificationReceiver.class);
-        reportIntent.setAction(NotificationReceiver.NOTIFY_ACTION_REPORT_APPLYING_PARAMS_ERROR);
-        reportIntent.putExtra(NotificationReceiver.TAG_ERR, e);
-        var flags = Build.VERSION.SDK_INT >= Build.VERSION_CODES.M
-                ? PendingIntent.FLAG_UPDATE_CURRENT
-                | PendingIntent.FLAG_IMMUTABLE : PendingIntent.FLAG_UPDATE_CURRENT;
-        PendingIntent shutdownPendingIntent =
-                PendingIntent.getBroadcast(
-                        getApplicationContext(),
-                        0,
-                        reportIntent,
-                        flags
-                );
-
-        return new NotificationCompat.Action.Builder(
-                R.drawable.ic_send_white_24dp,
-                getString(R.string.report),
-                shutdownPendingIntent)
-                .build();
     }
 
     private void handleSettingsChanged(String key)
