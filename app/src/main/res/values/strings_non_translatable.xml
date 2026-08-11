@@ -48,5 +48,5 @@
     </string-array>
 
     <!-- About dialog -->
-    <string name="about_changelog_link" translatable="false">https://github.com/TachibanaGeneralLaboratories/download-navi/blob/master/NEWS.md</string>
+    <string name="about_changelog_link" translatable="false">https://github.com/ddCeka/download-navi/blob/master/NEWS.md</string>
 </resources>
