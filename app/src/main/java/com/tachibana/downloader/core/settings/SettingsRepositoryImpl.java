@@ -103,7 +103,7 @@ public class SettingsRepositoryImpl implements SettingsRepository
         static final boolean browserEnableCaching = true;
         static final boolean browserEnableCookies = true;
         static final boolean browserDisableFromSystem = false;
-        static final String browserStartPage = "SearX";
+        static final String browserStartPage = "https://opnxng.com/search";
         static final boolean browserBottomAddressBar = true;
         static final boolean browserDoNotTrack = true;
         static final String browserSearchEngine = "https://opnxng.com/search?q={searchTerms}";
