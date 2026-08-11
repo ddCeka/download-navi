@@ -59,8 +59,6 @@ tasks.withType(Test) {
     }
 }
 
-def ROOM_VERSION = '2.5.1'
-
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
@@ -71,7 +69,7 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
     androidTestImplementation 'androidx.test:rules:1.5.0'
-    androidTestImplementation "androidx.room:room-testing:$ROOM_VERSION"
+    androidTestImplementation "androidx.room:room-testing:2.5.2"
     testAnnotationProcessor 'com.google.auto.service:auto-service:1.0.1'
 
     /* AndroidX libraries */
@@ -82,9 +80,9 @@ dependencies {
     implementation 'com.google.android.material:material:1.9.0-beta01'
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.2.0-alpha01'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
-    implementation "androidx.room:room-runtime:$ROOM_VERSION"
-    implementation "androidx.room:room-rxjava2:$ROOM_VERSION"
-    annotationProcessor "androidx.room:room-compiler:$ROOM_VERSION" /* For schemas import */
+    implementation "androidx.room:room-runtime:2.5.2"
+    implementation "androidx.room:room-rxjava2:2.5.2"
+    annotationProcessor "androidx.room:room-compiler:2.5.2" /* For schemas import */
     implementation 'androidx.work:work-runtime:2.8.1'
     implementation 'androidx.multidex:multidex:2.0.1'
     implementation 'androidx.viewpager2:viewpager2:1.0.0'
