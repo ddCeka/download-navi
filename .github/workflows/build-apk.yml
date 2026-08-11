@@ -38,10 +38,10 @@ jobs:
           cat "app/build/outputs/apk/release/output-metadata.json" >> "$GITHUB_STEP_SUMMARY"
           echo >> "$GITHUB_STEP_SUMMARY"
           echo '```' >> "$GITHUB_STEP_SUMMARY"
-          mv app/build/outputs/apk/release/app-release-unsigned-signed.apk "app/build/outputs/apk/release/Downloader-Navi_v$VERSION_NAME.apk"
+          mv app/build/outputs/apk/release/app-release-unsigned-signed.apk "app/build/outputs/apk/release/Downloader-Navi-v$VERSION_NAME.apk"
 
       - name: "Upload APK"
         uses: actions/upload-artifact@v7
         with:
           name: Downloader-Navi
-          path: app/build/outputs/apk/release/*.apk
+          path: app/build/outputs/apk/release/Downloader-Navi-*.apk
