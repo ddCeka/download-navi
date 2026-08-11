@@ -19,6 +19,17 @@ jobs:
       - name: "Build release APK"
         run: ./gradlew assembleRelease
 
+      - name: Sign APK
+        uses: r0adkll/sign-android-release@a391126403df92c6a0a3988a829dd47f79b89ed7
+        with:
+          releaseDirectory: app/build/outputs/apk/release
+          signingKeyBase64: ${{ secrets.SIGNING_KEY }}
+          alias: ${{ secrets.ALIAS }}
+          keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
+          keyPassword: ${{ secrets.KEY_PASSWORD }}
+        env:
+          BUILD_TOOLS_VERSION: '35.0.1'
+
       - name: "Rename APK"
         run: |
           VERSION_NAME="$(jq -r ".elements[0].versionName" "app/build/outputs/apk/release/output-metadata.json")"
@@ -27,10 +38,10 @@ jobs:
           cat "app/build/outputs/apk/release/output-metadata.json" >> "$GITHUB_STEP_SUMMARY"
           echo >> "$GITHUB_STEP_SUMMARY"
           echo '```' >> "$GITHUB_STEP_SUMMARY"
-          mv app/build/outputs/apk/release/*.apk "app/build/outputs/apk/release/Downloader-Navi_v$VERSION_NAME.apk"
+          mv app/build/outputs/apk/release/app-release-unsigned-signed.apk "app/build/outputs/apk/release/Downloader-Navi_v$VERSION_NAME.apk"
 
       - name: "Upload APK"
         uses: actions/upload-artifact@v7
         with:
-          name: app
+          name: Downloader-Navi
           path: app/build/outputs/apk/release/*.apk
