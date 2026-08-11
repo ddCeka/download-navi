@@ -81,9 +81,6 @@ import com.tachibana.downloader.ui.main.DownloadItem;
 import com.tachibana.downloader.ui.main.drawer.DrawerGroup;
 import com.tachibana.downloader.ui.main.drawer.DrawerGroupItem;
 
-import org.acra.ACRA;
-import org.acra.ReportField;
-
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -545,14 +542,6 @@ public class Utils {
         ComponentName bootReceiver = new ComponentName(appContext, BootReceiver.class);
         appContext.getPackageManager()
                 .setComponentEnabledSetting(bootReceiver, flag, PackageManager.DONT_KILL_APP);
-    }
-
-    public static void reportError(@NonNull Throwable error,
-                                   String comment) {
-        if (comment != null)
-            ACRA.getErrorReporter().putCustomData(ReportField.USER_COMMENT.toString(), comment);
-
-        ACRA.getErrorReporter().handleSilentException(error);
     }
 
     public static String getAppVersionName(@NonNull Context context) {

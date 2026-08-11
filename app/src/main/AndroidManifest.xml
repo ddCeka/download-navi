@@ -1110,13 +1110,6 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ui.errorreport.ErrorReportActivity"
-            android:theme="@style/AppTheme.Translucent"
-            android:process=":acra"
-            android:excludeFromRecents="true"
-            android:finishOnTaskLaunch="true"
-            android:launchMode="singleInstance" />
-
         <activity android:name=".ui.SendTextToClipboard"
             android:label="@string/send_text_to_clipboard"
             android:icon="@drawable/ic_content_copy_grey600_48dp"

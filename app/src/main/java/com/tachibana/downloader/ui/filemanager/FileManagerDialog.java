@@ -51,7 +51,6 @@ import com.tachibana.downloader.core.system.SystemFacadeHelper;
 import com.tachibana.downloader.core.utils.Utils;
 import com.tachibana.downloader.databinding.ActivityFilemanagerDialogBinding;
 import com.tachibana.downloader.ui.BaseAlertDialog;
-import com.tachibana.downloader.ui.errorreport.ErrorReportDialog;
 
 import java.io.IOException;
 
@@ -82,7 +81,6 @@ public class FileManagerDialog extends AppCompatActivity
     private static final String TAG_ERR_CREATE_DIR = "err_create_dir";
     private static final String TAG_ERROR_OPEN_DIR_DIALOG = "error_open_dir_dialog";
     private static final String TAG_REPLACE_FILE_DIALOG = "replace_file_dialog";
-    private static final String TAG_ERROR_REPORT_DIALOG = "error_report_dialog";
     private static final int SAF_CREATE_FILE_REQUEST_CODE = 1;
     private static final int SAF_OPEN_FILE_REQUEST_CODE = 2;
     private static final int SAF_OPEN_FILE_TREE_REQUEST_CODE = 3;
@@ -97,7 +95,6 @@ public class FileManagerDialog extends AppCompatActivity
 
     private FileManagerViewModel viewModel;
     private BaseAlertDialog inputNameDialog;
-    private ErrorReportDialog errorReportDialog;
     private BaseAlertDialog.SharedViewModel dialogViewModel;
     private final CompositeDisposable disposable = new CompositeDisposable();
     private SharedPreferences pref;
@@ -128,7 +125,6 @@ public class FileManagerDialog extends AppCompatActivity
 
         FragmentManager fm = getSupportFragmentManager();
         inputNameDialog = (BaseAlertDialog)fm.findFragmentByTag(TAG_INPUT_NAME_DIALOG);
-        errorReportDialog = (ErrorReportDialog)fm.findFragmentByTag(TAG_ERROR_REPORT_DIALOG);
         dialogViewModel = new ViewModelProvider(this).get(BaseAlertDialog.SharedViewModel.class);
 
         String title = viewModel.config.title;
@@ -309,7 +305,6 @@ public class FileManagerDialog extends AppCompatActivity
                                 permissionDeniedToast();
                             } catch (IOException e) {
                                 Log.e(TAG, Log.getStackTraceString(e));
-                                showSendErrorDialog(e);
                             }
                         }
                     }
@@ -317,37 +312,12 @@ public class FileManagerDialog extends AppCompatActivity
 
                 } else if (event.dialogTag.equals(TAG_REPLACE_FILE_DIALOG)) {
                     createFile(true);
-                } else if (event.dialogTag.equals(TAG_ERROR_REPORT_DIALOG) && errorReportDialog != null) {
-                    Dialog dialog = errorReportDialog.getDialog();
-                    if (dialog != null) {
-                        TextInputEditText editText = dialog.findViewById(R.id.comment);
-                        Editable e = editText.getText();
-                        String comment = (e == null ? null : e.toString());
-
-                        Utils.reportError(viewModel.errorReport, comment);
-                        errorReportDialog.dismiss();
-                    }
                 }
                 break;
             case NEGATIVE_BUTTON_CLICKED:
                 if (event.dialogTag.equals(TAG_INPUT_NAME_DIALOG) && inputNameDialog != null)
                     inputNameDialog.dismiss();
-                else if (event.dialogTag.equals(TAG_ERROR_REPORT_DIALOG) && errorReportDialog != null)
-                    errorReportDialog.dismiss();
                 break;
-        }
-    }
-
-    private void showSendErrorDialog(Exception e)
-    {
-        viewModel.errorReport = e;
-        if (getSupportFragmentManager().findFragmentByTag(TAG_ERROR_REPORT_DIALOG) == null) {
-            errorReportDialog = ErrorReportDialog.newInstance(
-                    getString(R.string.error),
-                    getString(R.string.error_open_dir),
-                    Log.getStackTraceString(e));
-
-            errorReportDialog.show(getSupportFragmentManager(), TAG_ERROR_REPORT_DIALOG);
         }
     }
 
@@ -423,7 +393,6 @@ public class FileManagerDialog extends AppCompatActivity
                 permissionDeniedToast();
             }  catch (IOException e) {
                 Log.e(TAG, Log.getStackTraceString(e));
-                showSendErrorDialog(e);
             }
 
         } else if (item.getType() == FileManagerNode.Type.FILE &&

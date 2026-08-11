@@ -88,8 +88,6 @@ public class NotificationReceiver extends BroadcastReceiver
                 break;
             case NOTIFY_ACTION_REPORT_APPLYING_PARAMS_ERROR:
                 Throwable e = (Throwable)intent.getSerializableExtra(TAG_ERR);
-                if (e != null)
-                    Utils.reportError(e, null);
                 break;
         }
     }
