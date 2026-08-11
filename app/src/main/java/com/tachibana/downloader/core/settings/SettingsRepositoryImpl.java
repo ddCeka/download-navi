@@ -56,7 +56,7 @@ public class SettingsRepositoryImpl implements SettingsRepository
         static final String notifySound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION).toString();
         static final boolean playSoundNotify = true;
         static final boolean ledIndicatorNotify = true;
-        static final boolean vibrationNotify = true;
+        static final boolean vibrationNotify = false;
         static int ledIndicatorColorNotify(@NonNull Context context)
         {
             return ContextCompat.getColor(context, R.color.primary);
@@ -81,7 +81,7 @@ public class SettingsRepositoryImpl implements SettingsRepository
         }
         /* Limitation settings */
         static final int maxActiveDownloads = 3;
-        static final int maxDownloadRetries = 5;
+        static final int maxDownloadRetries = 3;
         // In Kib
         static final int speedLimit = 0;
         /* Storage settings */
@@ -103,10 +103,10 @@ public class SettingsRepositoryImpl implements SettingsRepository
         static final boolean browserEnableCaching = true;
         static final boolean browserEnableCookies = true;
         static final boolean browserDisableFromSystem = false;
-        static final String browserStartPage = "https://duckduckgo.com";
+        static final String browserStartPage = "SearX";
         static final boolean browserBottomAddressBar = true;
         static final boolean browserDoNotTrack = true;
-        static final String browserSearchEngine = "https://duckduckgo.com/?q={searchTerms}";
+        static final String browserSearchEngine = "https://opnxng.com/search?q={searchTerms}";
         static final boolean browserHideMenuIcon = false;
         static final boolean askDisableBatteryOptimization = true;
         static final boolean askNotificationPermission = true;

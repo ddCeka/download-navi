@@ -7,14 +7,17 @@
         <item>@string/pref_theme_entries_0</item>
         <item>@string/pref_theme_entries_1</item>
         <item>@string/pref_theme_entries_2</item>
+        <item>@string/pref_theme_entries_3</item>
     </string-array>
     <string name="pref_theme_light_value" translatable="false">0</string>
     <string name="pref_theme_dark_value" translatable="false">1</string>
     <string name="pref_theme_black_value" translatable="false">2</string>
+    <string name="pref_theme_follow_os" translatable="false">3</string>
     <string-array name="pref_theme_entries_value" translatable="false">
         <item>@string/pref_theme_light_value</item>
         <item>@string/pref_theme_dark_value</item>
         <item>@string/pref_theme_black_value</item>
+        <item>@string/pref_theme_follow_os</item>
     </string-array>
     <!-- Browser settings -->
     <string-array name="pref_browser_search_engine_entries" translatable="false">
@@ -25,6 +28,7 @@
         <item>MetaGer</item>
         <item>Oscobo</item>
         <item>Qwant</item>
+        <item>SearX</item>
         <item>Swisscows</item>
         <item>Yahoo</item>
         <item>Yandex</item>
@@ -37,6 +41,7 @@
         <item>https://metager.org/meta/meta.ger3?submit-query=&amp;focus=web&amp;eingabe={searchTerms}</item>
         <item>https://www.oscobo.com/search.php?q={searchTerms}</item>
         <item>https://www.qwant.com/?q={searchTerms}</item>
+        <item>https://opnxng.com/search?q={searchTerms}</item>
         <item>https://swisscows.ch/web?query={searchTerms}</item>
         <item>https://search.yahoo.com/p={searchTerms}</item>
         <item>https://yandex.com/?q={searchTerms}</item>
