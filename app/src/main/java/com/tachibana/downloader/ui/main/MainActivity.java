@@ -33,6 +33,7 @@ import android.preference.PreferenceManager;
 import android.provider.DocumentsContract;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -60,16 +61,19 @@ import com.google.android.material.tabs.TabLayoutMediator;
 import com.h6ah4i.android.widget.advrecyclerview.animator.GeneralItemAnimator;
 import com.h6ah4i.android.widget.advrecyclerview.animator.RefactoredDefaultItemAnimator;
 import com.h6ah4i.android.widget.advrecyclerview.expandable.RecyclerViewExpandableItemManager;
-import com.tachibana.downloader.ui.BatteryOptimizationDialog;
-import com.tachibana.downloader.ui.PermissionDeniedDialog;
 import com.tachibana.downloader.R;
 import com.tachibana.downloader.core.RepositoryHelper;
 import com.tachibana.downloader.core.model.DownloadEngine;
+import com.tachibana.downloader.core.model.data.StatusCode;
+import com.tachibana.downloader.core.model.data.entity.DownloadInfo;
 import com.tachibana.downloader.core.settings.SettingsRepository;
+import com.tachibana.downloader.core.storage.DataRepository;
 import com.tachibana.downloader.core.utils.Utils;
 import com.tachibana.downloader.receiver.NotificationReceiver;
 import com.tachibana.downloader.service.DownloadService;
 import com.tachibana.downloader.ui.BaseAlertDialog;
+import com.tachibana.downloader.ui.BatteryOptimizationDialog;
+import com.tachibana.downloader.ui.PermissionDeniedDialog;
 import com.tachibana.downloader.ui.PermissionManager;
 import com.tachibana.downloader.ui.adddownload.AddDownloadActivity;
 import com.tachibana.downloader.ui.browser.BrowserActivity;
@@ -78,6 +82,7 @@ import com.tachibana.downloader.ui.main.drawer.DrawerGroup;
 import com.tachibana.downloader.ui.main.drawer.DrawerGroupItem;
 import com.tachibana.downloader.ui.settings.SettingsActivity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import io.reactivex.disposables.CompositeDisposable;
@@ -110,12 +115,14 @@ public class MainActivity extends AppCompatActivity
     private DownloadListPagerAdapter pagerAdapter;
     private DownloadsViewModel fragmentViewModel;
     private FloatingActionButton fab;
+    private FloatingActionButton clear;
     private SearchView searchView;
     private DownloadEngine engine;
     private SettingsRepository pref;
     protected CompositeDisposable disposables = new CompositeDisposable();
     private BaseAlertDialog.SharedViewModel dialogViewModel;
     private BaseAlertDialog aboutDialog;
+    private BaseAlertDialog deleteAllDownloadsDialog;
     private PermissionDeniedDialog permDeniedDialog;
     private BatteryOptimizationDialog batteryDialog;
     private PermissionManager permissionManager;
@@ -188,6 +195,8 @@ public class MainActivity extends AppCompatActivity
         tabLayout = findViewById(R.id.download_list_tabs);
         viewPager = findViewById(R.id.download_list_viewpager);
         fab = findViewById(R.id.add_fab);
+        clear = findViewById(R.id.purge_list);
+        clear.hide();
         drawerItemsList = findViewById(R.id.drawer_items_list);
         layoutManager = new LinearLayoutManager(this);
 
@@ -225,6 +234,37 @@ public class MainActivity extends AppCompatActivity
         ).attach();
 
         fab.setOnClickListener((v) -> startActivity(new Intent(this, AddDownloadActivity.class)));
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                if (tab.getPosition() == DownloadListPagerAdapter.COMPLETED_FRAG_POS)
+                    clear.show();
+                else
+                    clear.hide();
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+            }
+        });
+
+        clear.setOnClickListener((v) -> {
+                deleteAllDownloadsDialog = BaseAlertDialog.newInstance(
+                        getString(R.string.deleting),
+                        getString(R.string.delete_all_downloads),
+                        R.layout.dialog_delete_all_downloads,
+                        getString(R.string.ok),
+                        getString(R.string.cancel),
+                        null,
+                        false);
+                var fm = getSupportFragmentManager();
+                deleteAllDownloadsDialog.show(fm, "delete_all_downloads_dialog");
+
+        });
     }
 
     private void initDrawer()
@@ -316,6 +356,25 @@ public class MainActivity extends AppCompatActivity
                         }
                         if (event.type == BaseAlertDialog.EventType.POSITIVE_BUTTON_CLICKED) {
                             Utils.requestDisableBatteryOptimization(this);
+                        }
+                    } else if (event.dialogTag.equals("delete_all_downloads_dialog")) {
+                        switch (event.type) {
+                            case POSITIVE_BUTTON_CLICKED:
+                                Context thisContext = this;
+                                Thread thread = new Thread(() -> {
+                                    DataRepository repo = RepositoryHelper.getDataRepository(thisContext);
+                                    List<DownloadInfo> completedDownloads = new ArrayList<>();
+                                    for (DownloadInfo downloadInfo : repo.getAllInfo()) {
+                                        if (StatusCode.isStatusCompleted(downloadInfo.statusCode))
+                                            completedDownloads.add(downloadInfo);
+                                    }
+                                    DownloadInfo[] downloadInfoArray = new DownloadInfo[completedDownloads.size()];
+                                    engine.deleteDownloads(false, completedDownloads.toArray(downloadInfoArray));
+                                });
+                                thread.start();
+                            case NEGATIVE_BUTTON_CLICKED:
+                                deleteAllDownloadsDialog.dismiss();
+                                break;
                         }
                     }
                 });
