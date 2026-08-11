@@ -45,3 +45,4 @@ jobs:
         with:
           name: Downloader-Navi
           path: app/build/outputs/apk/release/Downloader-Navi-*.apk
+          archive: false
