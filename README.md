@@ -1,5 +1,4 @@
 # Download Navi
-=====================
 
 Download Navi is a free and Open Source download manager for Android 5.0+.
 
