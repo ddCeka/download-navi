@@ -1,3 +1,9 @@
+Version 1.6.4 (2026-10-17)
+==========================
+
+ * Changed user agent from 149 to 144.
+ * Bump versionCode
+
 Version 1.6.3 (2026-08-12)
 ==========================
 
